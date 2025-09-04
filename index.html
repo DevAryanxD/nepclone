@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+  <title>NepCoder — Full-Stack Developer & AI Enthusiast (Clone)</title>
+  <meta name="description" content="Clean-room clone of a modern developer landing page with neon gradients and glassy UI." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Swap fonts as you like -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ===== Sticky/Glassy Header ===== -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Home">
+        <span class="brand-icon" aria-hidden="true">
+          <!-- Rounded square with chevrons -->
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+            <rect x="2" y="2" width="20" height="20" rx="6" fill="url(#g)"/>
+            <path d="M13.5 8l-3 4 3 4" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="g" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#6EE7F9"/><stop offset="1" stop-color="#A78BFA"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <strong>NepCoder</strong>
+          <em>Full-Stack Developer</em>
+        </span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <nav id="mobile-menu" class="nav-mobile" hidden>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ===== Background layers ===== -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-blobs" aria-hidden="true">
+    <span class="blob purple"></span>
+    <span class="blob blue"></span>
+    <span class="blob pink"></span>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <main>
+    <section class="hero container">
+      <div class="hero-text">
+        <div class="availability" role="status" aria-live="polite">
+          <span class="dot"></span> Available for projects
+        </div>
+
+        <h1 class="title">
+          Hi, I'm <span class="gradient-text">NepCoder</span>
+        </h1>
+
+        <p class="subtitle">Full-Stack Developer &amp; AI Enthusiast</p>
+
+        <p class="specialties">
+          Specializing in
+          <span class="accent blue">Cloudflare Workers</span>,
+          <span class="accent purple">JavaScript</span>,
+          <span class="accent pink">AI Integration</span>,
+          and <span class="accent orange">Modern Web Technologies</span>
+        </p>
+
+        <ul class="chips" aria-label="Expertise">
+          <li class="chip">
+            <span class="chip-icon" aria-hidden="true">💻</span> Full-Stack
+          </li>
+          <li class="chip">
+            <span class="chip-icon" aria-hidden="true">⚡</span> AI Expert
+          </li>
+          <li class="chip">
+            <span class="chip-icon" aria-hidden="true">✨</span> Bot Creator
+          </li>
+        </ul>
+
+        <div class="cta">
+          <a href="#work" class="btn btn-primary">Explore My Work</a>
+          <a href="#contact" class="btn btn-ghost">Let’s Connect</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" data-animate="fade-up">
+        <!-- Glowing circular avatar with animated ring -->
+        <figure class="avatar-wrap" aria-label="Portrait">
+          <div class="avatar-ring" aria-hidden="true"></div>
+          <img
+            class="avatar"
+            src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=512&auto=format&fit=crop"
+            alt="Your avatar"
+            width="420" height="420"
+          />
+        </figure>
+
+        <!-- Floating code FAB -->
+        <button class="fab" aria-label="Open code samples" onclick="document.getElementById('work').scrollIntoView({behavior:'smooth'})">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M8.5 8.5L5 12l3.5 3.5M15.5 8.5L19 12l-3.5 3.5M13 6l-2 12" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- ===== Work (placeholder) ===== -->
+    <section id="work" class="container section">
+      <h2 class="section-title">Selected Work</h2>
+      <div class="cards">
+        <article class="card" data-animate="fade-up">
+          <h3>Edge Worker API</h3>
+          <p>Ultra-fast serverless endpoints powered by Cloudflare Workers and KV.</p>
+          <a class="card-link" href="#contact">View Case Study →</a>
+        </article>
+        <article class="card" data-animate="fade-up" style="--delay:120ms">
+          <h3>Realtime Chatbot</h3>
+          <p>Streaming web UI, function calling, and vector search for instant replies.</p>
+          <a class="card-link" href="#contact">View Case Study →</a>
+        </article>
+        <article class="card" data-animate="fade-up" style="--delay:240ms">
+          <h3>Dev Portfolio Kit</h3>
+          <p>Open-source starter for neon/glass design & smooth scroll animations.</p>
+          <a class="card-link" href="#contact">View Case Study →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== About (placeholder) ===== -->
+    <section id="about" class="container section">
+      <h2 class="section-title">About</h2>
+      <p>I build delightful web apps with solid architecture, a11y, and performance in mind.</p>
+    </section>
+
+    <!-- ===== Contact (placeholder) ===== -->
+    <section id="contact" class="container section">
+      <h2 class="section-title">Let’s Connect</h2>
+      <form class="contact" onsubmit="event.preventDefault(); alert('Thanks! This demo does not actually send email.');">
+        <label>
+          <span>Name</span>
+          <input required name="name" autocomplete="name" />
+        </label>
+        <label>
+          <span>Email</span>
+          <input required type="email" name="email" autocomplete="email" />
+        </label>
+        <label class="grid-2">
+          <span>Message</span>
+          <textarea required name="message" rows="4"></textarea>
+        </label>
+        <button class="btn btn-primary">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> NepCoder — clean-room clone. Built with ❤️</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+  </html>
