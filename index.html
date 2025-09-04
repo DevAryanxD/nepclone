@@ -2,31 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, viewport-fit=cover"
-  />
-  <title>NepCoder — Full-Stack Developer & AI Enthusiast (Clone)</title>
-  <meta name="description" content="Clean-room clone of a modern developer landing page with neon gradients and glassy UI." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>NepCoder — Full-Stack Developer & AI Enthusiast</title>
+  <meta name="description" content="A modern, neon-glass portfolio: skills, projects, bots, community, services & contact." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Swap fonts as you like -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- ===== Sticky/Glassy Header ===== -->
+  <!-- Sticky Header -->
   <header class="site-header" id="top">
     <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Home">
+      <a class="brand" href="#home" aria-label="Home">
         <span class="brand-icon" aria-hidden="true">
-          <!-- Rounded square with chevrons -->
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
             <rect x="2" y="2" width="20" height="20" rx="6" fill="url(#g)"/>
             <path d="M13.5 8l-3 4 3 4" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
             <defs>
-              <linearGradient id="g" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#6EE7F9"/><stop offset="1" stop-color="#A78BFA"/>
+              <linearGradient id="g" x1="2" y1="2" x2="22" y2="22">
+                <stop stop-color="#60a5fa"/><stop offset="1" stop-color="#a78bfa"/>
               </linearGradient>
             </defs>
           </svg>
@@ -37,10 +32,12 @@
         </span>
       </a>
 
-      <nav class="nav-desktop" aria-label="Primary">
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+      <nav class="nav-desktop" aria-label="Main">
+        <a href="#skills" data-spy>Skills</a>
+        <a href="#projects" data-spy>Projects</a>
+        <a href="#bots" data-spy>Bots</a>
+        <a href="#community" data-spy>Community</a>
+        <a href="#contact" data-spy>Contact</a>
       </nav>
 
       <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
@@ -51,13 +48,15 @@
     </div>
 
     <nav id="mobile-menu" class="nav-mobile" hidden>
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#bots">Bots</a>
+      <a href="#community">Community</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- ===== Background layers ===== -->
+  <!-- Background layers -->
   <div class="bg-grid" aria-hidden="true"></div>
   <div class="bg-blobs" aria-hidden="true">
     <span class="blob purple"></span>
@@ -65,60 +64,38 @@
     <span class="blob pink"></span>
   </div>
 
-  <!-- ===== HERO ===== -->
-  <main>
+  <main id="home">
+    <!-- HERO -->
     <section class="hero container">
-      <div class="hero-text">
-        <div class="availability" role="status" aria-live="polite">
-          <span class="dot"></span> Available for projects
-        </div>
-
-        <h1 class="title">
-          Hi, I'm <span class="gradient-text">NepCoder</span>
-        </h1>
-
+      <div class="hero-text" data-animate="fade-up">
+        <div class="availability" role="status"><span class="dot"></span> Available for projects</div>
+        <h1 class="title">Hi, I'm <span class="gradient-text">NepCoder</span></h1>
         <p class="subtitle">Full-Stack Developer &amp; AI Enthusiast</p>
-
         <p class="specialties">
-          Specializing in
-          <span class="accent blue">Cloudflare Workers</span>,
-          <span class="accent purple">JavaScript</span>,
-          <span class="accent pink">AI Integration</span>,
-          and <span class="accent orange">Modern Web Technologies</span>
+          Specializing in <span class="accent blue">Cloudflare Workers</span>,
+          <span class="accent purple">JavaScript/TypeScript</span>,
+          <span class="accent pink">AI Integration</span> &amp;
+          <span class="accent orange">Modern Web</span>.
         </p>
-
-        <ul class="chips" aria-label="Expertise">
-          <li class="chip">
-            <span class="chip-icon" aria-hidden="true">💻</span> Full-Stack
-          </li>
-          <li class="chip">
-            <span class="chip-icon" aria-hidden="true">⚡</span> AI Expert
-          </li>
-          <li class="chip">
-            <span class="chip-icon" aria-hidden="true">✨</span> Bot Creator
-          </li>
+        <ul class="chips">
+          <li class="chip"><span class="chip-icon">⚡</span> Edge &amp; APIs</li>
+          <li class="chip"><span class="chip-icon">🤖</span> AI + Bots</li>
+          <li class="chip"><span class="chip-icon">🎨</span> UI/UX</li>
         </ul>
-
         <div class="cta">
-          <a href="#work" class="btn btn-primary">Explore My Work</a>
+          <a href="#projects" class="btn btn-primary">Explore My Work</a>
           <a href="#contact" class="btn btn-ghost">Let’s Connect</a>
         </div>
       </div>
 
-      <div class="hero-visual" data-animate="fade-up">
-        <!-- Glowing circular avatar with animated ring -->
-        <figure class="avatar-wrap" aria-label="Portrait">
-          <div class="avatar-ring" aria-hidden="true"></div>
-          <img
-            class="avatar"
-            src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=512&auto=format&fit=crop"
-            alt="Your avatar"
-            width="420" height="420"
-          />
+      <div class="hero-visual" data-animate="fade-up" style="--delay:120ms">
+        <figure class="avatar-wrap">
+          <div class="avatar-ring"></div>
+          <img class="avatar" alt="Your avatar"
+               src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=512&auto=format&fit=crop"
+               width="420" height="420">
         </figure>
-
-        <!-- Floating code FAB -->
-        <button class="fab" aria-label="Open code samples" onclick="document.getElementById('work').scrollIntoView({behavior:'smooth'})">
+        <button class="fab" aria-label="Jump to projects" onclick="document.querySelector('#projects').scrollIntoView({behavior:'smooth'})">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M8.5 8.5L5 12l3.5 3.5M15.5 8.5L19 12l-3.5 3.5M13 6l-2 12" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -126,61 +103,367 @@
       </div>
     </section>
 
-    <!-- ===== Work (placeholder) ===== -->
-    <section id="work" class="container section">
-      <h2 class="section-title">Selected Work</h2>
-      <div class="cards">
-        <article class="card" data-animate="fade-up">
-          <h3>Edge Worker API</h3>
-          <p>Ultra-fast serverless endpoints powered by Cloudflare Workers and KV.</p>
-          <a class="card-link" href="#contact">View Case Study →</a>
+    <!-- SKILLS -->
+    <section id="skills" class="container section">
+      <div class="section-intro" data-animate="fade-up">
+        <span class="pill"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l2.4 5.6L20 8l-4 4 .9 5.9L12 15.8 7.1 17.9 8 12 4 8l5.6-.4z"/></svg> Technical Expertise</span>
+        <h2 class="section-title gradient-head">Skills &amp; Technologies</h2>
+        <p class="muted">Passionate about cutting-edge tech and building scalable, delightful experiences.</p>
+      </div>
+
+      <div class="skills-grid">
+        <!-- One card template; copy with different data-level -->
+        <article class="skill" data-animate="fade-up">
+          <div class="skill-icon" style="--ic:#f472b6"><span>⚡</span></div>
+          <h3>Cloudflare Workers</h3>
+          <p>Edge compute with V8 runtime for ultra-low latency APIs and microservices.</p>
+          <div class="meter" data-level="95"><span></span><em>95%</em></div>
         </article>
-        <article class="card" data-animate="fade-up" style="--delay:120ms">
-          <h3>Realtime Chatbot</h3>
-          <p>Streaming web UI, function calling, and vector search for instant replies.</p>
-          <a class="card-link" href="#contact">View Case Study →</a>
+
+        <article class="skill" data-animate="fade-up" style="--delay:60ms">
+          <div class="skill-icon" style="--ic:#f59e0b"><span>⌨️</span></div>
+          <h3>JavaScript/TypeScript</h3>
+          <p>Modern ESNext patterns, type-safe architectures, and DX-first tooling.</p>
+          <div class="meter" data-level="92"><span></span><em>92%</em></div>
         </article>
-        <article class="card" data-animate="fade-up" style="--delay:240ms">
-          <h3>Dev Portfolio Kit</h3>
-          <p>Open-source starter for neon/glass design & smooth scroll animations.</p>
-          <a class="card-link" href="#contact">View Case Study →</a>
+
+        <article class="skill" data-animate="fade-up" style="--delay:120ms">
+          <div class="skill-icon" style="--ic:#22d3ee"><span>🌐</span></div>
+          <h3>Web Development</h3>
+          <p>Responsive interfaces, accessibility, and performance budgets.</p>
+          <div class="meter" data-level="90"><span></span><em>90%</em></div>
+        </article>
+
+        <article class="skill" data-animate="fade-up">
+          <div class="skill-icon" style="--ic:#a78bfa"><span>🧠</span></div>
+          <h3>AI Integration</h3>
+          <p>Function calling, RAG, streaming UX, and tool orchestration.</p>
+          <div class="meter" data-level="88"><span></span><em>88%</em></div>
+        </article>
+
+        <article class="skill" data-animate="fade-up" style="--delay:60ms">
+          <div class="skill-icon" style="--ic:#60a5fa"><span>🤖</span></div>
+          <h3>Bot Development</h3>
+          <p>Telegram/Discord automations, payments, queues, analytics.</p>
+          <div class="meter" data-level="93"><span></span><em>93%</em></div>
+        </article>
+
+        <article class="skill" data-animate="fade-up" style="--delay:120ms">
+          <div class="skill-icon" style="--ic:#34d399"><span>🔌</span></div>
+          <h3>API Development</h3>
+          <p>REST, GraphQL, webhooks; auth, rate-limits, observability.</p>
+          <div class="meter" data-level="87"><span></span><em>87%</em></div>
+        </article>
+
+        <article class="skill" data-animate="fade-up">
+          <div class="skill-icon" style="--ic:#f97316"><span>🛡️</span></div>
+          <h3>Cybersecurity</h3>
+          <p>Secure-by-default apps: OWASP, CSP, tokens, secrets & hardening.</p>
+          <div class="meter" data-level="75"><span></span><em>75%</em></div>
+        </article>
+
+        <article class="skill" data-animate="fade-up" style="--delay:60ms">
+          <div class="skill-icon" style="--ic:#fb7185"><span>🎛️</span></div>
+          <h3>UI/UX Design</h3>
+          <p>Human-centered flows, micro-interactions, and typography systems.</p>
+          <div class="meter" data-level="82"><span></span><em>82%</em></div>
         </article>
       </div>
     </section>
 
-    <!-- ===== About (placeholder) ===== -->
-    <section id="about" class="container section">
-      <h2 class="section-title">About</h2>
-      <p>I build delightful web apps with solid architecture, a11y, and performance in mind.</p>
+    <!-- FEATURED PROJECTS -->
+    <section id="projects" class="container section">
+      <div class="section-intro" data-animate="fade-up">
+        <span class="pill"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M13 3l8 8-8 8-2-2 6-6-6-6zM3 13l8-8 2 2-6 6 6 6-2 2z"/></svg> Featured Work</span>
+        <h2 class="section-title gradient-head">Featured Projects</h2>
+        <p class="muted">A showcase of web apps, AI tools, and developer solutions pushing the envelope.</p>
+      </div>
+
+      <div class="feature-list">
+        <article class="feature" data-animate="fade-up">
+          <div class="feature-badge">FEATURED</div>
+          <div class="feature-icon" style="--ic:#22d3ee">💾</div>
+          <div class="feature-body">
+            <h3>NepHosting</h3>
+            <p>Revolutionary free hosting with unlimited file space for developers worldwide.</p>
+            <ul class="metrics">
+              <li><strong>10K+</strong> Users</li>
+              <li><strong>99.9%</strong> Uptime</li>
+            </ul>
+            <div class="tags">
+              <span>Hosting</span><span>Free</span><span>Unlimited Storage</span><span>Developer Tools</span>
+            </div>
+            <a class="btn chip-btn" href="#contact">Explore Project</a>
+          </div>
+        </article>
+
+        <article class="feature" data-animate="fade-up" style="--delay:120ms">
+          <div class="feature-badge">FEATURED</div>
+          <div class="feature-icon" style="--ic:#34d399">📚</div>
+          <div class="feature-body">
+            <h3>Manga Readers</h3>
+            <p>Premium platform with a massive catalog and buttery-smooth reading.</p>
+            <ul class="metrics">
+              <li><strong>50K+</strong> Chapters</li>
+              <li><strong>25K+</strong> Readers</li>
+            </ul>
+            <div class="tags">
+              <span>Manga</span><span>Entertainment</span><span>Mobile-First</span>
+            </div>
+            <a class="btn chip-btn" href="#contact">Explore Project</a>
+          </div>
+        </article>
+
+        <article class="feature" data-animate="fade-up" style="--delay:240ms">
+          <div class="feature-icon" style="--ic:#f472b6">🖼️</div>
+          <div class="feature-body">
+            <h3>AI Image Generator</h3>
+            <p>State-of-the-art image generation with granular controls & pipeline presets.</p>
+            <ul class="metrics">
+              <li><strong>100K+</strong> Generated</li>
+              <li><strong>15+</strong> Models</li>
+            </ul>
+            <div class="tags">
+              <span>AI</span><span>Creative</span><span>Machine Learning</span>
+            </div>
+            <a class="btn chip-btn" href="#contact">Explore Project</a>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <!-- ===== Contact (placeholder) ===== -->
+    <!-- MORE PROJECTS -->
+    <section class="container section" id="more-projects">
+      <h2 class="section-title center">More Projects</h2>
+
+      <div class="cards grid-2">
+        <article class="card" data-animate="fade-up">
+          <div class="card-icon" style="--ic:#fb7185">🧠</div>
+          <h3>NepSiteAI</h3>
+          <p>AI assistant specialized in HTML, CSS and JavaScript development.</p>
+          <div class="tags"><span>AI</span><span>Coding Assistant</span></div>
+          <a class="card-link" href="#contact">View Project →</a>
+        </article>
+
+        <article class="card" data-animate="fade-up" style="--delay:80ms">
+          <div class="card-icon" style="--ic:#f472b6">📸</div>
+          <h3>ThumbnailAI</h3>
+          <p>Pro YouTube thumbnail creator with advanced design algorithms.</p>
+          <div class="tags"><span>AI</span><span>YouTube</span></div>
+          <a class="card-link" href="#contact">View Project →</a>
+        </article>
+
+        <article class="card" data-animate="fade-up">
+          <div class="card-icon" style="--ic:#a78bfa">🔎</div>
+          <h3>TextLens OCR</h3>
+          <p>Open-source OCR toolkit built with Tesseract for accurate extraction.</p>
+          <div class="tags"><span>OCR</span><span>Open Source</span></div>
+          <a class="card-link" href="#contact">View Project →</a>
+        </article>
+
+        <article class="card" data-animate="fade-up" style="--delay:80ms">
+          <div class="card-icon" style="--ic:#22d3ee">🧰</div>
+          <h3>Dev Portfolio Kit</h3>
+          <p>Starter kit for neon/glass design, scroll animations, and best practices.</p>
+          <div class="tags"><span>Starter</span><span>UI</span></div>
+          <a class="card-link" href="#contact">View Project →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- TELEGRAM BOTS -->
+    <section id="bots" class="container section">
+      <div class="section-intro" data-animate="fade-up">
+        <span class="pill"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 1010 10A10.012 10.012 0 0012 2Zm1 15l-2-2-3 1 7-7 2 2z"/></svg> Telegram Automation</span>
+        <h2 class="section-title gradient-head">Telegram Bots</h2>
+        <p class="muted">Intelligent bots with automation, AI features, and silky user experience.</p>
+      </div>
+
+      <!-- Mobile: horizontal snap; Desktop: grid -->
+      <div class="bot-track" id="botTrack">
+        <article class="bot-card">
+          <div class="card-icon" style="--ic:#fb7185">❤️</div>
+          <h3>@Datingconnect</h3>
+          <p>Smart matching, realtime chat, verification.</p>
+          <ul class="micro">
+            <li><span>15K+</span> Users</li><li><span>5K+</span> Matches</li>
+          </ul>
+          <a class="btn bot-btn red" href="#contact">Try Bot</a>
+        </article>
+
+        <article class="bot-card">
+          <div class="card-icon" style="--ic:#a78bfa">✉️</div>
+          <h3>@Temporary_GmailBot</h3>
+          <p>Instant disposable emails with auto-delete and privacy.</p>
+          <ul class="micro">
+            <li><span>50K+</span> Emails</li><li>24/7 Active</li>
+          </ul>
+          <a class="btn bot-btn purple" href="#contact">Try Bot</a>
+        </article>
+
+        <article class="bot-card">
+          <div class="card-icon" style="--ic:#34d399">🎎</div>
+          <h3>@imagetoGhibliArtsBot</h3>
+          <p>Transform images to Studio Ghibli-style art.</p>
+          <ul class="micro">
+            <li><span>25K+</span> Artworks</li><li><span>10+</span> Styles</li>
+          </ul>
+          <a class="btn bot-btn teal" href="#contact">Try Bot</a>
+        </article>
+
+        <article class="bot-card">
+          <div class="card-icon" style="--ic:#f472b6">📝</div>
+          <h3>@ImageEditByPromptBot</h3>
+          <p>AI image editing by natural-language prompts.</p>
+          <ul class="micro">
+            <li><span>30K+</span> Edits</li><li><span>1000+</span> Prompts</li>
+          </ul>
+          <a class="btn bot-btn pink" href="#contact">Try Bot</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- GITHUB + COMMUNITY -->
+    <section id="github" class="container section">
+      <div class="promo panel" data-animate="fade-up">
+        <span class="pill"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.31 6.85 9.65.5.1.68-.22.68-.48 0-.24-.01-.86-.01-1.68-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.09-1.49-1.09-1.49-.9-.63.07-.62.07-.62 1 .07 1.54 1.06 1.54 1.06.89 1.56 2.33 1.11 2.9.85.09-.66.35-1.11.63-1.37-2.22-.26-4.55-1.14-4.55-5.1 0-1.13.39-2.05 1.03-2.77-.1-.26-.45-1.3.1-2.71 0 0 .85-.28 2.8 1.05a9.31 9.31 0 015.1 0c1.95-1.33 2.8-1.05 2.8-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.64 1.03 2.77 0 3.97-2.34 4.83-4.57 5.09.36.32.68.95.68 1.92 0 1.39-.01 2.5-.01 2.84 0 .26.18.58.69.48A10.03 10.03 0 0022 12.26C22 6.58 17.52 2 12 2z"/></svg> Open Source</span>
+        <h3 class="promo-title">GitHub Repository</h3>
+        <p class="muted">Explore open-source projects, contribute, and peek under the hood.</p>
+        <a class="btn btn-primary" href="#contact">@Nepcoder-coder</a>
+      </div>
+
+      <div id="community" class="promo panel" data-animate="fade-up" style="--delay:120ms">
+        <span class="pill"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M12 12a5 5 0 100-10 5 5 0 000 10Zm-9 9a9 9 0 1118 0H3z"/></svg> Free Resources</span>
+        <h3 class="promo-title">Developer Community</h3>
+        <p class="muted">Join for free bot source codes, tutorials, and collabs with fellow devs.</p>
+        <div class="promo-features">
+          <div class="mini"><span>🧩</span> Free Source Code</div>
+          <div class="mini"><span>👥</span> 10K+ Members</div>
+          <div class="mini"><span>🔁</span> Weekly Updates</div>
+        </div>
+        <a class="btn chip-btn" href="#contact">Join Community</a>
+      </div>
+    </section>
+
+    <!-- SERVICES & STATS -->
+    <section id="services" class="container section">
+      <h2 class="section-title">Services I Offer</h2>
+      <div class="cards grid-2">
+        <article class="card" data-animate="fade-up">
+          <div class="card-icon" style="--ic:#60a5fa">🌐</div>
+          <h3>Web Development</h3>
+          <p>Full-stack apps with modern tech, performance & a11y.</p>
+        </article>
+        <article class="card" data-animate="fade-up" style="--delay:60ms">
+          <div class="card-icon" style="--ic:#a78bfa">🤖</div>
+          <h3>Bot Development</h3>
+          <p>Custom Telegram bots with advanced automations.</p>
+        </article>
+        <article class="card" data-animate="fade-up">
+          <div class="card-icon" style="--ic:#34d399">🔌</div>
+          <h3>API Development</h3>
+          <p>REST/GraphQL microservices, observability and SLAs.</p>
+        </article>
+        <article class="card" data-animate="fade-up" style="--delay:60ms">
+          <div class="card-icon" style="--ic:#f59e0b">🧠</div>
+          <h3>AI Integration</h3>
+          <p>Model selection, tooling & production-grade pipelines.</p>
+        </article>
+      </div>
+
+      <div id="stats" class="stats panel" data-animate="fade-up">
+        <div class="kpi"><span class="num" data-count="50">0</span><em>Projects Completed</em></div>
+        <div class="kpi"><span class="num" data-count="100">0</span><em>Users Served (K+)</em></div>
+        <div class="kpi"><span class="num" data-count="24">0</span><em>Support (7)</em></div>
+        <div class="kpi"><span class="num" data-count="99">0</span><em>Client Satisfaction (%)</em></div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="container section" id="cta">
+      <div class="cta-panel panel" data-animate="fade-up">
+        <h2 class="section-title gradient-head">Let’s Build Something Amazing</h2>
+        <p class="muted">Need a custom web app, AI integration, or Cloudflare Workers solution? I’ll help turn your vision into reality.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#contact">Start a Project</a>
+          <a class="btn btn-ghost" href="#community">Join Community</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
     <section id="contact" class="container section">
-      <h2 class="section-title">Let’s Connect</h2>
+      <div class="section-intro" data-animate="fade-up">
+        <span class="pill"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M21 8V7l-3 2-5-3-10 6v8l10-6 5 3 3-2v-1l-3 2-5-3V9l5 3 3-2z"/></svg> Let’s Connect</span>
+        <h2 class="section-title gradient-head">Get In Touch</h2>
+        <p class="muted">Reach out for collaborations, consultations, or project inquiries.</p>
+      </div>
+
+      <div class="contact-cards">
+        <article class="contact-card panel">
+          <div class="big-ic" style="--ic:#60a5fa">💬</div>
+          <h3>Direct Contact</h3>
+          <p>DM on Telegram for quick chats and proposals.</p>
+          <a class="btn chip-btn" href="#contact">@nepcodernp</a>
+        </article>
+
+        <article class="contact-card panel">
+          <div class="big-ic" style="--ic:#34d399">👨‍💻</div>
+          <h3>Developer Community</h3>
+          <p>Join our vibrant community for resources and networking.</p>
+          <a class="btn chip-btn" href="#community">@nepdevsz</a>
+        </article>
+      </div>
+
+      <!-- Optional form (works as demo) -->
       <form class="contact" onsubmit="event.preventDefault(); alert('Thanks! This demo does not actually send email.');">
-        <label>
-          <span>Name</span>
-          <input required name="name" autocomplete="name" />
-        </label>
-        <label>
-          <span>Email</span>
-          <input required type="email" name="email" autocomplete="email" />
-        </label>
-        <label class="grid-2">
-          <span>Message</span>
-          <textarea required name="message" rows="4"></textarea>
-        </label>
+        <label><span>Name</span><input required name="name" autocomplete="name"></label>
+        <label><span>Email</span><input required type="email" name="email" autocomplete="email"></label>
+        <label class="grid-2"><span>Message</span><textarea required rows="4" name="message"></textarea></label>
         <button class="btn btn-primary">Send</button>
       </form>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <p>© <span id="year"></span> NepCoder — clean-room clone. Built with ❤️</p>
+    <div class="container footer-row">
+      <div class="foot-brand">
+        <div class="brand small">
+          <span class="brand-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <rect x="2" y="2" width="20" height="20" rx="6" fill="url(#gg)"/>
+              <path d="M13 8l-3 4 3 4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs>
+                <linearGradient id="gg" x1="2" y1="2" x2="22" y2="22"><stop stop-color="#60a5fa"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <span class="brand-text">
+            <strong>NepCoder</strong>
+            <em>Full-Stack Developer</em>
+          </span>
+        </div>
+        <p class="muted">Passionate about modern web tech, AI, and building useful things.</p>
+        <div class="foot-actions">
+          <a class="btn chip-btn" href="#contact">Contact</a>
+          <a class="btn chip-btn" href="#community">Community</a>
+        </div>
+      </div>
+
+      <nav class="foot-cols">
+        <div><h4>Quick Links</h4><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#bots">Bots</a><a href="#contact">Contact</a></div>
+        <div><h4>Services</h4><a href="#services">Web Development</a><a href="#services">Bot Development</a><a href="#services">API</a><a href="#services">AI Integration</a></div>
+      </nav>
+    </div>
+
+    <div class="container foot-bottom">
+      <span>Made with ❤️ by NepCoder</span>
+      <span>© <span id="year"></span> NepCoder. All rights reserved.</span>
+      <span class="availability small"><span class="dot"></span> Available</span>
     </div>
   </footer>
 
+  <button id="toTop" class="to-top" aria-label="Back to top">↑</button>
   <script src="script.js"></script>
 </body>
-  </html>
+</html>
